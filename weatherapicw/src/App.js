@@ -6,7 +6,7 @@ const App = () => {
 
   useEffect(() => {
     // Fetch weather data from your API
-    fetch('api/weather')
+    fetch('http://localhost:3002/api/weather')
       .then(response => response.json())
       .then(data => setWeatherData(data.data))
       .catch(error => console.error('Error fetching weather data:', error));
