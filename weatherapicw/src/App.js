@@ -4,6 +4,7 @@ import WeatherFetcher from "./WeatherFetcher"; // Importing WeatherFetcher compo
 import MapContainer from "./components/map_container";
 
 const App = () => {
+  
   const [setWeatherData] = useState([]);
 
   return (
