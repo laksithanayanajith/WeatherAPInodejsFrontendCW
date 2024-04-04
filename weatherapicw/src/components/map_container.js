@@ -9,16 +9,24 @@ export default function MapContainer() {
   const [showCard, setShowCard] = useState(false);
 
   useEffect(() => {
-    axios
-      .get(
-        "https://weatherapinodejsbackendcw.onrender.com/api/v1/weather/lk/latest"
-      )
-      .then((response) => {
+    const fetchData = async () => {
+      try {
+        const apiKey = 'xvkffkvkrsvmtormbgdttjdcjgfskmsrhfsrmg';
+        const response = await axios.get(
+          "https://weatherapinodejsbackendcw.onrender.com/api/v1/weather/lk/latest",
+          {
+            headers: {
+              'x-api-key': apiKey
+            }
+          }
+        );
         setData(response.data.data);
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error("Error fetching weather data:", error);
-      });
+      }
+    };
+
+    fetchData();
   }, []);
 
   const handleDistrictClick = (district) => {
