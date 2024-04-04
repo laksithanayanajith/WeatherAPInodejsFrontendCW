@@ -1,10 +1,10 @@
 import React from 'react';
 
-const WeatherDataDisplay = ({ weatherData }) => {
+const WeatherDataDisplayByDistrict = ({ weatherData }) => {
   return (
-    <div className="weather-card-container">
+    <div>
       {weatherData.map(data => (
-        <div className="weather-card" key={data._id}>
+        <div key={data._id}>
           <h2>{data._district}</h2>
           <p>Temperature: {data._temperature}°C</p>
           <p>Humidity: {data._humidity}%</p>
@@ -17,4 +17,4 @@ const WeatherDataDisplay = ({ weatherData }) => {
   );
 };
 
-export default WeatherDataDisplay;
+export default WeatherDataDisplayByDistrict;
