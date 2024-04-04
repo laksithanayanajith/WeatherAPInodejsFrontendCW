@@ -4,8 +4,15 @@ import WeatherFetcher from "./WeatherFetcher"; // Importing WeatherFetcher compo
 import MapContainer from "./components/map_container";
 
 const App = () => {
-  
-  const [setWeatherData] = useState([]);
+  const [weatherData, setWeatherData] = useState([]);
+
+  useEffect(() => {
+    // Fetch weather data from your API
+    fetch('api/weather')
+      .then(response => response.json())
+      .then(data => setWeatherData(data.data))
+      .catch(error => console.error('Error fetching weather data:', error));
+  }, []);
 
   return (
     <div className="container" style={{display: "flex", flexDirection:"column",padding: "20px", justifyContent: "center", alignItems:"center", gap: "20px"}}>
