@@ -7,7 +7,12 @@ const WeatherFetcher = () => {
   const [isClick, setIsClick] = useState(false);
 
   const fetchData = () => {
-    fetch('https://weatherapinodejsbackendcw.onrender.com/api/v1/weather/lk/latest')
+    const apiKey = 'xvkffkvkrsvmtormbgdttjdcjgfskmsrhfsrmg';
+    fetch('https://weatherapinodejsbackendcw.onrender.com/api/v1/weather/lk/latest', {
+      headers: {
+        'x-api-key': apiKey
+      }
+    })
       .then(response => response.json())
       .then(data => setWeatherData(data.data))
       .catch(error => console.error('Error fetching weather data:', error));
