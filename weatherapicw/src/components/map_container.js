@@ -8,15 +8,15 @@ export default function MapContainer() {
   const [selectedDistrict, setSelectedDistrict] = useState(null);
   const [showCard, setShowCard] = useState(false);
 
-  useEffect(() => {
+    useEffect(() => {
     const fetchData = async () => {
       try {
-        const apiKey = 'xvkffkvkrsvmtormbgdttjdcjgfskmsrhfsrmg';
+        const apiKey = 'xvkffkvkrsvmtormbgdttjdcjgfskmsrhfsrmg'; // Replace 'your_api_key' with your actual API key
         const response = await axios.get(
           "https://weatherapinodejsbackendcw.onrender.com/api/v1/weather/lk/latest",
           {
             headers: {
-              'x-api-key': apiKey
+              'x-api-key': apiKey // Include your API key in the headers
             }
           }
         );
